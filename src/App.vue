@@ -3,6 +3,7 @@
     <h1>Image Gallery</h1>
     <ImageGallery />
     <h1>Map</h1>
+
     <MapBox/>
   </div>
 </template>
