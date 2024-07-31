@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <h1>Image Gallery</h1>
-    <ImageGallery />
+    <ImageGallery v-if="false"/>
     <h1>Map</h1>
-
-    <MapBox/>
+    <MapBox v-if="true"/>
   </div>
 </template>
 
