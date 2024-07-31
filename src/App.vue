@@ -1,17 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <h1>Image Gallery</h1>
+    <ImageGallery />
+    <h1>Map</h1>
+    <MapBox/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MapBox from './components/Map.vue';
+import ImageGallery from "@/components/ImageGallery.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    MapBox,
+    ImageGallery,
+  },
+};
 </script>
 
 <style>
