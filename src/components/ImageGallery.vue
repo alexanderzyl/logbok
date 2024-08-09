@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <div v-for="(image, index) in images" :key="index" class="gallery-item">
-      <img :src="image.link" :alt="image.title" @click="openImage(index)" />
+      <img :src="image.url" :alt="image.title" @click="openImage(index)" />
     </div>
 
     <div v-if="selectedImageIndex !== null" class="modal" @click="closeImage">
@@ -20,10 +20,10 @@ export default {
   },
   methods: {
     fetchImages() {
-      fetch('https://my-json-server.typicode.com/alexanderzyl/images_db/images')
+      fetch('https://backlogbok.onrender.com/api/v1/profiles/1')
           .then(response => response.json())
           .then(data => {
-            this.images = data;
+            this.images = data.images;
           })
           .catch(error => console.error('Error fetching images:', error));
     },
