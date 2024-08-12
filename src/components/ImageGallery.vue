@@ -20,12 +20,21 @@ export default {
   },
   methods: {
     fetchImages() {
-      fetch('https://backlogbok.onrender.com/api/v1/profiles/1')
+      fetch('https://backlogbok.onrender.com/api/v1/profiles/2')
           .then(response => response.json())
           .then(data => {
-            this.images = data.images;
+            // For demonstration purposes, we only use the first 10 images
+            this.images = this.shuffleArray(data.images).slice(0, 10);
           })
           .catch(error => console.error('Error fetching images:', error));
+    },
+    shuffleArray(array) {
+      let i = array.length - 1;
+      for (; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     },
     openImage(index) {
       this.selectedImageIndex = index;
